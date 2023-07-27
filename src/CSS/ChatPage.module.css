@@ -1,0 +1,25 @@
+.ChatPage{
+    background-color: rgb(243, 243, 213);
+    width: 100% ;
+    height: 100% ;
+    display: grid ;
+    grid-template-rows: 30px auto  ;
+}
+
+.Header{
+    text-align: center ;
+    text-align: center ;
+    padding: 10px ;
+}
+
+.ChatContainer{
+    background-color: rgb(249, 226, 226);
+    border: 1px solid black ;
+    border-radius: 10px ;
+    margin: 10px ;
+    padding: 10px ;
+    display: grid ;
+    grid-template-rows: 6fr 1fr 1fr ;
+   
+}
+

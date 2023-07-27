@@ -8,7 +8,8 @@ function App() {
   
   return (
     <div className="App">
-       { page==="LoginPage" ? <Loginpage> </Loginpage> : <ChatPage></ChatPage> }
+       {/* { page==="LoginPage" ? <Loginpage> </Loginpage> : <ChatPage></ChatPage> } */}
+       <ChatPage> </ChatPage>
     </div>
   );
 }
