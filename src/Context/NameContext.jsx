@@ -1,19 +1,19 @@
 import { createContext, useState } from "react";
 
-const ListContext = createContext();
+const NameContext = createContext();
 
-const ListState = (props) => {
-  const [user1List, setUser1List] = useState([]);
-  const [user2List, setUser2List] = useState([]);
+const NameState = (props) => {
+  const [name , setName] = useState("") ;
+  const [page, setPage] = useState("LoginPage");
 
   return (
-    <ListContext.Provider
-      value={{ user1List, user2List, setUser1List, setUser2List }}
+    <NameContext.Provider
+      value={{ name , setName , page , setPage }}
     >
       {props.children}
-    </ListContext.Provider>
+    </NameContext.Provider>
   );
 };
 
-export default ListContext;
-export { ListState };
+export default NameContext;
+export { NameState };

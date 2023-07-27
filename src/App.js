@@ -1,15 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Loginpage from './Components/LoginPage';
-import ChatPage from './Components/ChatPage' ;
-import { useState } from 'react';
+import logo from "./logo.svg";
+import "./App.css";
+import Loginpage from "./Components/LoginPage";
+import ChatPage from "./Components/ChatPage";
+import { useState , useContext } from "react";
+import NameContext from "./Context/NameContext";
+
 function App() {
-  const [page , setPage] = useState("LoginPage") ;
-  
+  const pageContext = useContext(NameContext) ;
+ console.log(pageContext.page) ;
   return (
     <div className="App">
-       {/* { page==="LoginPage" ? <Loginpage> </Loginpage> : <ChatPage></ChatPage> } */}
-       <ChatPage> </ChatPage>
+       { pageContext.page==="LoginPage" ? <Loginpage> </Loginpage> : <ChatPage></ChatPage> } 
     </div>
   );
 }
