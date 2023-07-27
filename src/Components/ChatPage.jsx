@@ -6,9 +6,11 @@ import Users from "./Users";
 import UserContext from "../Context/UserContext";
 import io from "socket.io-client";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import PageContext from "../Context/PageContext"
 
 export default function ChatPage() {
   const userContext = useContext(UserContext); 
+  const pageContext = useContext(PageContext)
   const [socket, setSocket] = useState(null);
   useEffect(() => {
     const socket = io("http://localhost:5000"); // Replace with your Socket.IO server URL
@@ -40,11 +42,10 @@ export default function ChatPage() {
       <div className={styles.Header}>
         <button
           onClick={() => {
-            userContext.setPage("LoginPage");
+            pageContext.setPage("LoginPage");
           }}
         >
-          {" "}
-          {"<"}{" "}
+          <ArrowBackIcon />
         </button>
         <div> {userContext.name} </div>
       </div>
