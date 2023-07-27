@@ -1,0 +1,49 @@
+.LoginPage{
+    background-color: rgb(247, 216, 206);
+    width: 25% ;
+    height: 25% ;
+    border: 1px solid black ;
+    border-radius: 10px ;
+    display: flex ;
+    flex-direction: column ;
+    padding: 10px ;
+    align-items: center ;
+    justify-content: center ;
+}
+
+.Heading{
+    margin: 0 10px 10px 10px  ;
+    text-align: center ;
+    font-size: 30px ;
+    font-weight: 400 ;
+    color: black ;
+}
+
+.nameInput{
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    gap: 10px ;
+}
+
+.nameInput input{
+    height: 20px;
+}
+
+.joinBtn{
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;  
+    height: 30px ;
+    width: 100px ;
+    border: 1px solid black ;
+    border-radius: 10px ;
+}
+
+.joinBtn button{
+    border: none;
+    background-color: transparent ;
+}
+
+
+
