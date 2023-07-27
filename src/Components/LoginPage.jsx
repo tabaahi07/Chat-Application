@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import styles from "../CSS/LoginPage.module.css";
-import NameContext from "../Context/NameContext";
+import UserContext from "../Context/UserContext";
+import PageContext from "../Context/PageContext";
 
 export default function Loginpage() {
-    const context = useContext(NameContext) ;
+    const pageContext = useContext(PageContext) ;
+    const userContext = useContext(UserContext) ;
+
       return <div className={styles.LoginPage}>
        <div className={styles.Heading} >
            My Chat App
@@ -12,13 +15,13 @@ export default function Loginpage() {
        <div className={styles.nameInput}> 
             <p> Name : </p>
             <input type="text" placeholder="Enter your name to join" onChange={(event) => {
-                context.setName(event.target.value) ;
+               userContext.setName(event.target.value) ;
             }} /> 
        </div>
 
        <div className={styles.joinBtn} >
            <button onClick={()=>{
-            context.setPage("ChatPage") 
+            pageContext.setPage("ChatPage") 
            }}> Join Chat </button>
        </div>
 
