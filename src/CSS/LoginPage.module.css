@@ -28,9 +28,15 @@
 
 .nameInput input{
     height: 20px;
+    outline: none ;
+    border: none ;
+    background-color: transparent ;
+    padding: 5px 5px 0 5px  ;
+    border-bottom: 2px dotted black ;
 }
 
 .joinBtn{
+    background-color: rgb(245, 202, 225);
     display: flex ;
     align-items: center ;
     justify-content: center ;  
@@ -41,6 +47,7 @@
 }
 
 .joinBtn button{
+    font-size: 15px ;
     border: none;
     background-color: transparent ;
 }
