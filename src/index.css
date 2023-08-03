@@ -21,4 +21,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--primary-300);
+  box-sizing: border-box;
 }

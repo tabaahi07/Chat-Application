@@ -15,7 +15,7 @@ export default function Loginpage() {
 
             <div className={styles.NameInput}>
                 <p> Name : </p>
-                <input type="text" placeholder="Username" onChange={(event) => {
+                <input autoComplete="false" type="text" placeholder="Username" onChange={(event) => {
                     userContext.setName(event.target.value);
                 }} />
             </div>

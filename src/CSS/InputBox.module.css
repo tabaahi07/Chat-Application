@@ -1,0 +1,26 @@
+.InputBox {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: 0.125rem;
+}
+
+.InputBox button {
+    padding: 0.375rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 2px solid var(--primary-800);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-800);
+    background-color: transparent;
+}
+
+.InputBox input {
+    padding: 0px 5px;
+    background-color: transparent;
+    border: 2px dotted var(--primary-800);
+    outline: none;
+    border-radius: 1.125rem;
+    word-wrap: break-word;
+}

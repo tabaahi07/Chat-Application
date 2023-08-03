@@ -17,6 +17,7 @@ function App() {
         ) : (
           <ChatPage></ChatPage>
         )}
+        {/* <ChatPage> </ChatPage> */}
       </UserState>
     </div>
   );

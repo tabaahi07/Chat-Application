@@ -1,0 +1,7 @@
+.BottomPanel {
+    display: grid;
+    grid-template-columns: min-content auto;
+    gap: 0.125rem;
+    background-color: var(--primary-600);
+    border-radius: 1.125rem;
+}
