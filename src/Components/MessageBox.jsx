@@ -15,7 +15,7 @@ const MessageBox = (props) => {
     return (
         <div>
             {messages.map(msg=>{
-                return <div> {(props.socket.id===msg.senderId) ? "You" : msg.senderName} : {msg.message} </div> 
+                return <div> {(props.socket.id===msg.id) ? "You" : msg.name} : {msg.message} </div> 
             })}
         </div>
     );

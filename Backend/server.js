@@ -14,9 +14,9 @@ const io = new Server(server, {
   }
 });
 
-var messageInfo = {
-    senderId : "" ,
-    senderName : "" ,
+var userInfo = {
+    id : "" ,
+    name : "" ,
     message : ""
 }
 
@@ -29,15 +29,16 @@ io.on('connection' , socket => {
     socket.emit('id' , socket.id) ;
     socket.on('uname' , name => {
         console.log("user's name is : " , name) ;
-        messageInfo.senderId = socket.id ;
-        messageInfo.senderName = name ;
+        userInfo.id = socket.id ;
+        userInfo.name = name ;
+        io.emit('add-user' , userInfo) ;
     }) 
 
     socket.on('global-send-message' , msg => {
         console.log("Message is : " , msg ) ;
-        messageInfo.message = msg ;
-        io.emit('global-receive-message' , messageInfo ) ;
-    })
+        userInfo.message = msg ;
+        io.emit('global-receive-message' , userInfo ) ;
+    })  
 
     
 })
