@@ -12,11 +12,12 @@ function App() {
   return (
     <div className="App">
       <UserState>
-        {pageContext.page === "LoginPage" ? (
+        {/* {pageContext.page === "LoginPage" ? (
           <Loginpage> </Loginpage>
         ) : (
           <ChatPage></ChatPage>
-        )}
+        )} */}
+        <ChatPage> </ChatPage>
       </UserState>
     </div>
   );
