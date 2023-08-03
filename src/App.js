@@ -7,10 +7,11 @@ import { UserState } from "./Context/UserContext";
 
 function App() {
   const pageContext = useContext(PageContext);
-  console.log(pageContext.page);
+
   return (
     <div className="App">
       <UserState>
+        {pageContext.page === "LoginPage" ? (
         {pageContext.page === "LoginPage" ? (
           <Loginpage> </Loginpage>
         ) : (

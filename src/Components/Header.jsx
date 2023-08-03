@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import UserContext from '../Context/UserContext';
-import styles from "../CSS/Header.module.css"
+import PageContext from '../Context/PageContext';
 
 const Header = () => {
-    const userContext = useContext(UserContext);
+    const pageContext = useContext(PageContext) ;
+    const userContext = useContext(UserContext) ;
     return (
-        <div className={styles.Header}>
-            <div className={styles.BackButton}>
-                <button>
-                    <ArrowBackIosIcon />
-                </button>
-            </div>
+        <div>
+            <button onClick={()=>{
+                pageContext.setPage("LoginPage") ;
+            }}> <ArrowBackIosIcon> </ArrowBackIosIcon> </button>
             <div> {userContext.name} </div>
         </div>
     );

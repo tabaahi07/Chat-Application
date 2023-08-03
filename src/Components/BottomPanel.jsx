@@ -2,11 +2,11 @@ import React from 'react';
 import Users from './Users';
 import InputBox from './InputBox';
 
-const BottomPanel = () => {
+const BottomPanel = (props) => {
     return (
         <div>
-            <Users> </Users>
-            <InputBox> </InputBox>
+            <Users socket={props.socket}> </Users>
+            <InputBox socket={props.socket} > </InputBox>
         </div>
     );
 }
