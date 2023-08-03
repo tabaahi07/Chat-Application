@@ -6,9 +6,8 @@ import PageContext from "./Context/PageContext";
 import { UserState } from "./Context/UserContext";
 
 function App() {
-  
   const pageContext = useContext(PageContext);
-  
+
   return (
     <div className="App">
       <UserState>

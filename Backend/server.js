@@ -14,9 +14,9 @@ const io = new Server(server, {
   }
 });
 
-var userInfo = {
-    id : "" ,
-    name : "" ,
+var messageInfo = {
+    senderId : "" ,
+    senderName : "" ,
     message : ""
 }
 
