@@ -20,17 +20,6 @@ import PeopleIcon from '@mui/icons-material/People';
   return (
     <div className={styles.Users}>
       <button> <PeopleIcon /> </button>
-      <div>
-        {users.map((user) => {
-          return (
-            <button onClick={() => {
-              props.socket.emit('create-room' , [props.socket.id , user.id ]) ;
-            }}>
-              <li>{user.name} </li>
-            </button>
-          );
-        })}
-      </div>
     </div>
   );
 };
