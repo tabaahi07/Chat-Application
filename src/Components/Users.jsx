@@ -22,9 +22,9 @@ const Users = (props) => {
         {users.map((user) => {
           return (
             <button onClick={() => {
-              
+              props.socket.emit('create-room' , [props.socket.id , user.id ]) ;
             }}>
-              <li> {user.name} </li>{" "}
+              <li>{user.name} </li>
             </button>
           );
         })}

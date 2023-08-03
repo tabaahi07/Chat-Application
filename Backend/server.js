@@ -40,6 +40,11 @@ io.on('connection' , socket => {
         io.emit('global-receive-message' , userInfo ) ;
     })  
 
+    socket.on('create-room' , ([myId , partnerId])=>{
+        socket.join( 'room-1' ) ;
+        io.emit(`${partnerId}` , {room: 'room-1' , partnerId : myId }) ;
+    } )
+
     
 })
 

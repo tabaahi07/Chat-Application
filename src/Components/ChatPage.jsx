@@ -27,6 +27,10 @@ const ChatPage = () => {
             console.log("user's id is :", id);
         })
 
+        socket.on(`${socket.id}` , roomObj => {
+            console.log("invitation accepted") ;
+        }) ;
+
         socket.emit('uname', userContext.name);
 
         return () => {
