@@ -4,27 +4,30 @@ import UserContext from "../Context/UserContext";
 import PageContext from "../Context/PageContext";
 
 export default function Loginpage() {
-    const pageContext = useContext(PageContext) ;
-    const userContext = useContext(UserContext) ;
+    const pageContext = useContext(PageContext);
+    const userContext = useContext(UserContext);
 
-      return <div className={styles.LoginPage}>
-       <div className={styles.Heading} >
-           My Chat App
-       </div>
+    return <div className={styles.LoginPage}>
+        <div className={styles.LoginBlock}>
+            <div className={styles.Heading} >
+                My Chat App
+            </div>
 
-       <div className={styles.nameInput}> 
-            <p> Name : </p>
-            <input type="text" placeholder="Enter your name to join" onChange={(event) => {
-               userContext.setName(event.target.value) ;
-            }} /> 
-       </div>
+            <div className={styles.nameInput}>
+                <p> Name : </p>
+                <input type="text" placeholder="Username" onChange={(event) => {
+                    userContext.setName(event.target.value);
+                }} />
+            </div>
 
-       <div className={styles.joinBtn} >
-           <button onClick={()=>{
-            pageContext.setPage("ChatPage") 
-           }}> Join Chat </button>
-       </div>
+            <div className={styles.joinBtn} >
+                <button onClick={() => {
+                    pageContext.setPage("ChatPage")
+                }}> Join Chat </button>
+            </div>
+
+        </div>
 
 
-  </div>;
+    </div>;
 }

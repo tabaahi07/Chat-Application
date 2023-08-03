@@ -2,7 +2,22 @@ import React, { useEffect, useState } from "react";
 import styles from "../CSS/MessageBox.module.css";
 
 export default function MessageBox(props) {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      content: "Hello",
+      sender: {
+        name: "Robin",
+        id: "221445"
+      }
+    },
+    {
+      content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam aspernatur accusamus debitis id itaque doloremque quae harum sint minima, velit, provident saepe placeat rerum sapiente nobis rem eligendi inventore facilis.",
+      sender: {
+        name: "Robin",
+        id: "221445"
+      }
+    }
+  ]);
   useEffect(() => {
     if (!props.socket) {
       return;
@@ -16,11 +31,11 @@ export default function MessageBox(props) {
   }, [props.socket]);
   return (
     <div className={styles.MessageBox}>
-      <ul>
+      <div className={styles.MessageWrapper}>
         {messages.map((message) => {
-          return <li> {message} </li>;
+          return <div className={styles.Message}> {message.content} <span className={styles.MessageSender}>{message.sender.name}</span> </div>;
         })} 
-      </ul>
+      </div>
     </div> 
   );
 }

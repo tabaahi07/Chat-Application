@@ -47,7 +47,8 @@ export default function ChatPage() {
         >
           <ArrowBackIcon />
         </button>
-        <div> {userContext.name} </div>
+        <h3>Global</h3>
+        <h3> {userContext.name} </h3>
       </div>
 
       <div className={styles.ChatContainer}>
