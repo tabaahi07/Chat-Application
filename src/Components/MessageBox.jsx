@@ -5,17 +5,17 @@ const MessageBox = (props) => {
 
     useEffect(()=>{
        if(!props.socket) { return }
-       props.socket.on('global-receive-message' , msg => {
-          console.log("Message received is : " , msg ) ;
+       props.socket.on('global-receive-message' , messageInfo => {
+          console.log("Message received is : " , messageInfo.message ) ;
           setMessages((prev) => {
-            return [...prev , msg ] ;
+            return [...prev , messageInfo ] ;
           })
        } )
     } , [props.socket] )
     return (
         <div>
             {messages.map(msg=>{
-                return <div> {msg} </div> 
+                return <div> {(props.socket.id===msg.senderId) ? "You" : msg.senderName} : {msg.message} </div> 
             })}
         </div>
     );
