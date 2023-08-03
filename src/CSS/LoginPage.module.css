@@ -1,0 +1,65 @@
+.LoginPage {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.LoginBlock {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    border: 3px solid var(--primary-800);
+    padding: 0.125rem;
+    border-radius: 1rem;
+    gap: 10px;
+    background-color: var(--primary-600);
+    padding: 1.5rem;
+}
+
+.Heading {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.NameInput, .JoinBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.NameInput {
+    padding: 0.625rem 0;
+}
+
+.NameInput input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px dotted var(--primary-800);
+    outline: none;
+    background-color: transparent;
+    font-weight: 600;
+    font-size: large;
+}
+
+.NameInput p {
+    font-weight: 600;
+}
+
+.JoinBtn button {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--primary-800);
+    color: var(--primary-800);
+    font-weight: 600;
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    font-size: 1.125rem;
+}
+
+.JoinBtn button:hover {
+    color: white;
+    background-color: var(--primary-800);
+}

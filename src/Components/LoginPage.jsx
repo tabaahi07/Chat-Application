@@ -13,14 +13,14 @@ export default function Loginpage() {
                 My Chat App
             </div>
 
-            <div className={styles.nameInput}>
+            <div className={styles.NameInput}>
                 <p> Name : </p>
                 <input type="text" placeholder="Username" onChange={(event) => {
                     userContext.setName(event.target.value);
                 }} />
             </div>
 
-            <div className={styles.joinBtn} >
+            <div className={styles.JoinBtn} >
                 <button onClick={() => {
                     pageContext.setPage("ChatPage")
                 }}> Join Chat </button>

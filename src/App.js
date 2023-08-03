@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Loginpage from "./Components/LoginPage";
 import ChatPage from "./Components/ChatPage";
