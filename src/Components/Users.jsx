@@ -19,7 +19,7 @@ import PeopleIcon from '@mui/icons-material/People';
 
   return (
     <div className={styles.Users}>
-      <button> users </button>
+      <button> <PeopleIcon /> </button>
       <div>
         {users.map((user) => {
           return (
