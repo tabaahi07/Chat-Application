@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Loginpage from "./Components/LoginPage";
+import ChatPage from "./Components/ChatPage";
+import { useState, useContext } from "react";
+import PageContext from "./Context/PageContext";
+import { UserState } from "./Context/UserContext";
 
 function App() {
+  const pageContext = useContext(PageContext);
+  console.log(pageContext.page);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserState>
+        {pageContext.page === "LoginPage" ? (
+          <Loginpage> </Loginpage>
+        ) : (
+          <ChatPage></ChatPage>
+        )}
+      </UserState>
     </div>
   );
 }
