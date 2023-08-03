@@ -1,12 +1,14 @@
-import React , {useState , useEffect} from 'react';
+import React , {useState , useEffect, useContext} from 'react';
 import Header from './Header';
 import MessageBox from './MessageBox';
 import BottomPanel from './BottomPanel';
-import { UserState } from '../Context/UserContext';
+import UserContext from '../Context/UserContext';
 import io from "socket.io-client"
 
 const ChatPage = () => {
-    const [socket , setSocket] = useState("") ;
+    const userContext = useContext(UserContext) ;
+
+    const [socket , setSocket] = useState(null) ;
     useEffect( () => {
         const socket = io("http://localhost:5000") ;
         setSocket(socket) ;
@@ -15,13 +17,29 @@ const ChatPage = () => {
             socket.disconnect() ;
         }
     } , []) ;
+
+    useEffect( () => {
+
+        if (!socket) return
+
+        socket.on('id' , id => {
+            console.log("user's id is :" , id) ;
+        })
+
+        socket.emit('uname' , userContext.name ) ;
+
+        return () => {
+            socket.off("id")
+        }
+
+    } , [socket] )
     
 
     return (
         <div>
             <Header> </Header>
-            <MessageBox> </MessageBox>
-            <BottomPanel> </BottomPanel>
+            <MessageBox socket={socket}> </MessageBox>
+            <BottomPanel socket={socket}> </BottomPanel>
         </div>
     );
 }

@@ -14,11 +14,25 @@ const io = new Server(server, {
   }
 });
 
+
+
 io.on('connection' , socket => {
     console.log("new user connected with socket id  : " , socket.id ) ;
     socket.on('disconnect' , () => {
         console.log("User disconnected") ;
     })
+
+    socket.emit('id' , socket.id) ;
+    socket.on('uname' , name => {
+        console.log("user's name is : " , name) ;
+    }) 
+
+    socket.on('global-send-message' , msg => {
+        console.log("Message is : " , msg ) ;
+        io.emit('global-receive-message' , msg ) ;
+    })
+
+    
 })
 
 
