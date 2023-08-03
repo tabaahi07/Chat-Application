@@ -10,10 +10,8 @@ import PeopleIcon from '@mui/icons-material/People';
       if (!props.socket) {
         return;
       }
-      props.socket.on("add-user", (userInfo) => {
-        setUsers((prev) => {
-          return [...prev, { id: userInfo.id, name: userInfo.name }];
-        });
+      props.socket.on("add-user", userList => {
+        setUsers(userList) ;
       });
     });
 
