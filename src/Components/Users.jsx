@@ -10,10 +10,8 @@ import PeopleIcon from '@mui/icons-material/People';
       if (!props.socket) {
         return;
       }
-      props.socket.on("add-user", (userInfo) => {
-        setUsers((prev) => {
-          return [...prev, { id: userInfo.id, name: userInfo.name }];
-        });
+      props.socket.on("add-user", userList => {
+        setUsers(userList) ;
       });
     });
 
@@ -24,7 +22,7 @@ import PeopleIcon from '@mui/icons-material/People';
         {users.map((user) => {
           return (
             <button onClick={() => {
-              props.socket.emit('create-room' , [props.socket.id , user.id ]) ;
+              props.socket.emit('create-room' , {myId : props.socket.id , partnerId : user.id }) ;
             }}>
               <li>{user.name} </li>
             </button>

@@ -20,6 +20,8 @@ var messageInfo = {
     message : ""
 }
 
+var users = [] ;
+
 io.on('connection' , socket => {
     console.log("new user connected with socket id  : " , socket.id ) ;
     socket.on('disconnect' , () => {
@@ -29,6 +31,8 @@ io.on('connection' , socket => {
     socket.emit('id' , socket.id) ;
     socket.on('uname' , name => {
         console.log("user's name is : " , name) ;
+        users.push({id : socket.id , name : name }) ;
+        io.emit('add-user' , users) ;
     }) 
 
     socket.on('global-send-message' , msg => {
@@ -36,9 +40,10 @@ io.on('connection' , socket => {
         io.emit('global-receive-message' , msg ) ;
     })
 
-    socket.on('create-room' , ([myId , partnerId])=>{
-        socket.join( 'room-1' ) ;
-        io.emit(`${partnerId}` , {room: 'room-1' , partnerId : myId }) ;
+    socket.on('create-room' , roomObj =>{
+        console.log("i m in room") ;
+        socket.join('room-1') ;
+        io.emit(`${roomObj.partnerId}` , {room: 'room-1' , partnerId : roomObj.myId }) ;
     } )
 
     
