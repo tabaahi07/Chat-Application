@@ -1,0 +1,19 @@
+.Users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Users button {
+    min-height: min-content;
+    aspect-ratio: 1/1;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-800);
+    background-color: transparent;
+    color: var(--primary-800);
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

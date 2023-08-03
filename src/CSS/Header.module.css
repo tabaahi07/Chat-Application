@@ -1,10 +1,21 @@
 .Header {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    background-color: var(--primary-600);
+    border-radius: 1.125rem;
 }
 
-.BackButton div {
+.BackButton button {
     width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    padding: 0.125rem 0.6125rem;
+}
+
+.UserName {
     display: flex;
     justify-content: center;
     align-items: center;

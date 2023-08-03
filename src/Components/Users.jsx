@@ -1,11 +1,13 @@
 import React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import ArrowBackIcon from "@mui/icons-material/ArrowBackIosNew";
+import styles from "../CSS/Users.module.css"
+import PeopleIcon from '@mui/icons-material/People';
 
 const Users = () => {
   return (
-    <div>
-      <button> users </button>
+    <div className={styles.Users}>
+      <button>
+        <PeopleIcon fontSize="small" />
+      </button>
     </div>
   );
 };
