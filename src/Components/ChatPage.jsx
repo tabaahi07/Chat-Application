@@ -1,27 +1,30 @@
-import React , {useState , useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import MessageBox from './MessageBox';
 import BottomPanel from './BottomPanel';
 import { UserState } from '../Context/UserContext';
 import io from "socket.io-client"
+import styles from "../CSS/ChatPage.module.css"
 
 const ChatPage = () => {
-    const [socket , setSocket] = useState("") ;
-    useEffect( () => {
-        const socket = io("http://localhost:5000") ;
-        setSocket(socket) ;
+    const [socket, setSocket] = useState("");
+    useEffect(() => {
+        const socket = io("http://localhost:5000");
+        setSocket(socket);
 
-        return ()=> {
-            socket.disconnect() ;
+        return () => {
+            socket.disconnect();
         }
-    } , []) ;
-    
+    }, []);
+
 
     return (
-        <div>
-            <Header> </Header>
-            <MessageBox> </MessageBox>
-            <BottomPanel> </BottomPanel>
+        <div className={styles.ChatPage}>
+            <div className={styles.ChatPageContainer}>
+                <Header> </Header>
+                <MessageBox> </MessageBox>
+                <BottomPanel> </BottomPanel>
+            </div>
         </div>
     );
 }
