@@ -9,7 +9,7 @@ const InputBox = (props) => {
     const [message , setMessage] = useState("") ;
     return (
         <div className={styles.InputBox}>
-            <input type='text' value={message} placeholder='Enter your message here' onChange={(event)=>{
+            <input autoComplete={false} type='text' value={message} placeholder='Enter your message here' onChange={(event)=>{
                 setMessage(event.target.value) ;
             }} /> 
             <button onClick={()=>{
