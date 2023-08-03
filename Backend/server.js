@@ -14,9 +14,9 @@ const io = new Server(server, {
   }
 });
 
-var userInfo = {
-    id : "" ,
-    name : "" ,
+var messageInfo = {
+    senderId : "" ,
+    senderName : "" ,
     message : ""
 }
 
@@ -29,16 +29,12 @@ io.on('connection' , socket => {
     socket.emit('id' , socket.id) ;
     socket.on('uname' , name => {
         console.log("user's name is : " , name) ;
-        userInfo.id = socket.id ;
-        userInfo.name = name ;
-        io.emit('add-user' , userInfo) ;
     }) 
 
     socket.on('global-send-message' , msg => {
         console.log("Message is : " , msg ) ;
-        userInfo.message = msg ;
-        io.emit('global-receive-message' , userInfo ) ;
-    })  
+        io.emit('global-receive-message' , msg ) ;
+    })
 
     socket.on('create-room' , ([myId , partnerId])=>{
         socket.join( 'room-1' ) ;

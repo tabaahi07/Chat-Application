@@ -25,6 +25,7 @@ const ChatPage = () => {
 
         socket.on('id', id => {
             console.log("user's id is :", id);
+            userContext.setId(id)
         })
 
         socket.on(`${socket.id}` , roomObj => {
