@@ -4,4 +4,7 @@
     gap: 0.125rem;
     background-color: var(--primary-600);
     border-radius: 1.125rem;
+    /* position: fixed;
+    bottom: 0.6125rem;
+    width: calc(100% - (2 * 0.6125rem)); */
 }
