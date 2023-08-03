@@ -1,6 +1,11 @@
+import React from 'react';
 
-import React from "react";
-
-export default function ChatPage(){
-    
+const ChatPage = () => {
+    return (
+        <div>
+            
+        </div>
+    );
 }
+
+export default ChatPage;
